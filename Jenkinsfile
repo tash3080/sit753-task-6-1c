@@ -35,5 +35,10 @@ pipeline{
                 echo "$NAME, Deployment is done!"
             }
         }
+        stage('Complete'){
+            steps{
+                echo "All completed!"
+            }
+        }
     }
 }
