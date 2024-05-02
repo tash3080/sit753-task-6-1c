@@ -88,13 +88,15 @@ pipeline{
                     echo("Success")
                     emailext to: "tash3080@gmail.com",
                     subject: "Integration Tests on Staging status email",
-                    body: "Integration Tests on Staging is successful"
+                    body: "Integration Tests on Staging is successful",
+                    attachLog: true
                 }
                 failure{
                     echo("Failure")
                     emailext to: "tash3080@gmail.com",
                     subject: "Integration Tests on Staging status email",
-                    body: "Integration Tests on Staging is failed"
+                    body: "Integration Tests on Staging is failed",
+                    attachLog: true
                 }
             }
         }
