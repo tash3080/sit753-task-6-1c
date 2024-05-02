@@ -14,7 +14,7 @@ pipeline{
             steps{
                 echo "Unit and Integration Tests!"
                 echo "Task: Run unit tests and integration tests"
-                echo "Tools: JUnit for unit tests, Selenium for integration tests"
+                echo "Tools: JUnit for unit tests and Selenium for integration tests"
             }
 
             post{
