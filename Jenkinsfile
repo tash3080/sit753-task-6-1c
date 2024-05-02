@@ -6,10 +6,8 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                sh 'echo "Build started and completed!"'
-                sh 'java --version'
+                echo "Build started!"
             }
-
             post{
                 always{
                     echo("Always")
@@ -25,19 +23,40 @@ pipeline{
                 }
             }
         }
-        stage('Test'){
+
+        stage('Unit and Integration Tests'){
             steps{
-                echo "Test started and completed!"
+                echo "Unit and Integration Tests!"
             }
         }
-        stage('Deploy'){
+
+        stage('Code Analysis'){
             steps{
-                echo "$NAME, Deployment is done!"
+                echo "Code Analysis!"
             }
         }
-        stage('Complete'){
+
+        stage('Security Scan'){
             steps{
-                echo "All completed!"
+                echo "Security Scan!"
+            }
+        }
+
+        stage('Deploy to Staging'){
+            steps{
+                echo "Deploy to Staging!"
+            }
+        }
+
+        stage('Integration Tests on Staging'){
+            steps{
+                echo "Integration Tests on Staging!"
+            }
+        }
+
+        stage('Deploy to Production'){
+            steps{
+                echo "$NAME, Deploy to Production!"
             }
         }
     }
