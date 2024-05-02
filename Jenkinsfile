@@ -13,7 +13,7 @@ pipeline{
         stage('Unit and Integration Tests'){
             steps{
                 echo "Unit and Integration Tests!"
-                echo "Task: Run unit tests and integration tests"
+                echo "Task: Run unit tests, integration tests"
                 echo "Tools: JUnit for unit tests and Selenium for integration tests"
             }
 
