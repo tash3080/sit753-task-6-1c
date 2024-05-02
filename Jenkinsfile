@@ -14,7 +14,7 @@ pipeline{
             steps{
                 echo "Unit and Integration Tests!"
                 echo "Task: Run unit tests and integration tests"
-                echo "Tools: JUnit for unit tests and Selenium for integration tests"
+                echo "Tools: JUnit for unit tests, Selenium for integration tests"
             }
 
             post{
@@ -22,13 +22,15 @@ pipeline{
                     echo("Success")
                     emailext to: "tash3080@gmail.com",
                     subject: "Unit and Integration Test status email",
-                    body: "Unit and Integration Test is successful"
+                    body: "Unit and Integration Test is successful",
+                    attachLog: true
                 }
                 failure{
                     echo("Failure")
                     emailext to: "tash3080@gmail.com",
                     subject: "Unit and Integration test status email",
-                    body: "Unit and Integration Test is failed"
+                    body: "Unit and Integration Test is failed",
+                    attachLog: true
                 }
             }
         }
@@ -86,15 +88,13 @@ pipeline{
                     echo("Success")
                     emailext to: "tash3080@gmail.com",
                     subject: "Integration Tests on Staging status email",
-                    body: "Integration Tests on Staging is successful",
-                    attachLog: true
+                    body: "Integration Tests on Staging is successful"
                 }
                 failure{
                     echo("Failure")
                     emailext to: "tash3080@gmail.com",
                     subject: "Integration Tests on Staging status email",
-                    body: "Integration Tests on Staging is failed",
-                    attachLog: true
+                    body: "Integration Tests on Staging is failed"
                 }
             }
         }
