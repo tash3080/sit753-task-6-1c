@@ -23,14 +23,14 @@ pipeline{
                     emailext to: "tash3080@gmail.com",
                     subject: "Unit and Integration Test status email",
                     body: "Unit and Integration Test is successful",
-                    attachLog: true
+                    // attachLog: true
                 }
                 failure{
                     echo("Failure")
                     emailext to: "tash3080@gmail.com",
                     subject: "Unit and Integration test status email",
                     body: "Unit and Integration Test is failed",
-                    attachLog: true
+                    // attachLog: true
                 }
             }
         }
