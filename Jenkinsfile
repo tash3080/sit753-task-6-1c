@@ -20,14 +20,14 @@ pipeline{
             post{
                 success{
                     echo("Success")
-                    mail to: "tash3080@gmail.com",
+                    emailext to: "tash3080@gmail.com",
                     subject: "Unit and Integration Test status email",
                     body: "Unit and Integration Test is successful",
                     attachLog: true
                 }
                 failure{
                     echo("Failure")
-                    mail to: "tash3080@gmail.com",
+                    emailext to: "tash3080@gmail.com",
                     subject: "Unit and Integration test status email",
                     body: "Unit and Integration Test is failed",
                     attachLog: true
@@ -53,14 +53,14 @@ pipeline{
             post{
                 success{
                     echo("Success")
-                    mail to: "tash3080@gmail.com",
+                    emailext to: "tash3080@gmail.com",
                     subject: "Security Scan status email",
                     body: "Security Scan is successful",
                     attachLog: true
                 }
                 failure{
                     echo("Failure")
-                    mail to: "tash3080@gmail.com",
+                    emailext to: "tash3080@gmail.com",
                     subject: "Security Scan status email",
                     body: "Security Scan is failed",
                     attachLog: true
@@ -86,14 +86,14 @@ pipeline{
             post{
                 success{
                     echo("Success")
-                    mail to: "tash3080@gmail.com",
+                    emailext to: "tash3080@gmail.com",
                     subject: "Integration Tests on Staging status email",
                     body: "Integration Tests on Staging is successful",
                     attachLog: true
                 }
                 failure{
                     echo("Failure")
-                    mail to: "tash3080@gmail.com",
+                    emailext to: "tash3080@gmail.com",
                     subject: "Integration Tests on Staging status email",
                     body: "Integration Tests on Staging is failed",
                     attachLog: true
